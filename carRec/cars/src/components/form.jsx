@@ -62,30 +62,15 @@ const CarForm = () => {
 
     async function fetchData(e) {
         e.preventDefault(); // Prevent the form from submitting and reloading the page
-        let prompt = `give recommendation for a car available in india whose budget is under ${budget} , fuel type is ${fuelType}, it is preffered if the brand is ${brandPreference}, the car should be an ${carType}, mileage of the car is of ${mileagePriority} and safety of the car is of ${safetyPriority}`;
+        let prompt = `give recommendation for a car available in india whose budget is around ${budget} , fuel type is ${fuelType}, it is preffered if the brand is ${brandPreference}, the car should be an ${carType}, mileage of the car is of ${mileagePriority} and safety of the car is of ${safetyPriority}`;
         if (brandPreference === '') {
-            prompt = `give recommendation for a car available in india whose budget is under ${budget} , fuel type is ${fuelType}, the car should be a ${carType}, mileage of the car is of ${mileagePriority} and safety of the car is of ${safetyPriority}`;
+            prompt = `give recommendation for a car available in india whose budget is around ${budget} , fuel type is ${fuelType}, the car should be a ${carType}, mileage of the car is of ${mileagePriority} and safety of the car is of ${safetyPriority}`;
         }
         setSubmitted(true);
         // Here, you can make an API call or perform any other desired actions
         console.log(prompt);
         try {
-            // const response = await fetch('https://api.gemini.google.com/v1/generate-text', {
-            //   method: 'POST',
-            //   headers: {
-            //     'Content-Type': 'application/json',
-            //     // Add your API key or authorization token here if required
-            //     'Authorization': 'AIzaSyA39NIHMvMTc93hZ4sWRYH8z4YkQUzg0bA'
-            //   },
-            //   body: JSON.stringify({
-            //     prompt: prompt,
-            //     // Other parameters as needed, such as temperature, max_tokens, etc.
-            //     // Refer to Gemini API documentation for specific options
-            //   })
-            // });
-        
-            // const data = await response.json();
-            // console.log(data); // Process the response from the API
+            
             console.log(process.env.NEXT_PUBLIC_API_KEY)
         
             const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_API_KEY);
