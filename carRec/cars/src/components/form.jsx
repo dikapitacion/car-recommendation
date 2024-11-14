@@ -64,7 +64,8 @@ const CarForm = () => {
         e.preventDefault(); // Prevent the form from submitting and reloading the page
         let prompt = `give recommendation for a car available in india whose budget is around ${budget} , fuel type is ${fuelType}, it is preffered if the brand is ${brandPreference}, the car should be an ${carType}, mileage of the car is of ${mileagePriority} and safety of the car is of ${safetyPriority}`;
         if (brandPreference === '') {
-            prompt = `give recommendation for a car available in india whose budget is around ${budget} , fuel type is ${fuelType}, the car should be a ${carType}, mileage of the car is of ${mileagePriority} and safety of the car is of ${safetyPriority}`;
+            prompt = `Recommend a car available in India with a budget around ₹${budget}. The car should have a ${fuelType} engine, be a ${carType}, the car has a ${mileagePriority} for mileage and ${safetyPriority} for safety features. Please provide a few top options, including key specifications, mileage, and safety ratings, that best meet these criteria.`;
+
         }
         setSubmitted(true);
         // Here, you can make an API call or perform any other desired actions
